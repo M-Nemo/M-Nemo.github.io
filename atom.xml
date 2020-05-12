@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-11T08:46:12.764Z</updated>
+  <updated>2020-05-12T06:08:38.523Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【LeetCode】1431. Kids With the Greatest Number of Candies</title>
+    <link href="http://yoursite.com/2020/05/12/%E3%80%90LeetCode%E3%80%911431-Kids-With-the-Greatest-Number-of-Candies/"/>
+    <id>http://yoursite.com/2020/05/12/%E3%80%90LeetCode%E3%80%911431-Kids-With-the-Greatest-Number-of-Candies/</id>
+    <published>2020-05-12T06:01:40.000Z</published>
+    <updated>2020-05-12T06:08:38.523Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote><p>Given the array candies and the integer extraCandies, where candies[i] represents the number of candies that the ith kid has.<br> For each kid check if there is a way to distribute extraCandies among the kids such that he or she can have the greatest number of candies among them. Notice that multiple kids can have the greatest number of candies.</p></blockquote><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>给出数组candies，和整数extraCandies，输出新布尔数组，新数组元素每个元素表示是否数组candies中的元素在加上extraCandies后能在原数组中最大。</p><h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h3 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h3><p>先获取原数组最大值max，然后遍历数组candies，比较加上extraCandies后和max的大小，此处可以用上JavaScript自带的方法<code>Math.max()</code>和<code>map()</code>。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">candies</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">extraCandies</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> kidsWithCandies = <span class="function"><span class="keyword">function</span>(<span class="params">candies, extraCandies</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> max = <span class="built_in">Math</span>.max(...candies)</span><br><span class="line">  <span class="keyword">return</span> candies.map(<span class="function"><span class="params">i</span> =&gt;</span> i + extraCandies &gt;= max)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Given the array candies and the integer extraCandies, whe
+      
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>【LeetCode】709. To Lower Case</title>
