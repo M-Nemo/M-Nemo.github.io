@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-12T06:08:38.523Z</updated>
+  <updated>2020-05-14T02:21:30.698Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【LeetCode】1365. How Many Numbers Are Smaller Than the Current Number</title>
+    <link href="http://yoursite.com/2020/05/14/%E3%80%90LeetCode%E3%80%911365-How-Many-Numbers-Are-Smaller-Than-the-Current-Number/"/>
+    <id>http://yoursite.com/2020/05/14/%E3%80%90LeetCode%E3%80%911365-How-Many-Numbers-Are-Smaller-Than-the-Current-Number/</id>
+    <published>2020-05-14T02:10:33.000Z</published>
+    <updated>2020-05-14T02:21:30.698Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote><p>Given the array nums, for each nums[i] find out how many numbers in the array are smaller than it. That is, for each nums[i] you have to count the number of valid j’s such that j != i and nums[j] &lt; nums[i].<br>  Return the answer in an array.</p></blockquote><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>要求返回数组中比当前元素小的元素的个数</p><h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h3 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h3><p>两层循环，比较，计数</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">nums</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> smallerNumbersThanCurrent = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">  <span class="keyword">let</span> j, count;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i&lt; nums.length; i++)&#123;</span><br><span class="line">    count = <span class="number">0</span>;</span><br><span class="line">    j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; nums.length; j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(nums[i] &gt; nums[j])&#123;</span><br><span class="line">        count ++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    arr.push(count);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h3 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h3><p>原理同思路一相同，利用<code>map()</code>和<code>reduce()</code>方法，简化代码，但是会降低可读性，不推荐，仅作为理解<code>reduce()</code>方法使用</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">nums</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> smallerNumbersThanCurrent = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> nums.map(<span class="function"><span class="params">num_a</span> =&gt;</span> nums.reduce(<span class="function">(<span class="params">count, num_b</span>) =&gt;</span> num_a &gt; num_b ? count + <span class="number">1</span> : count, <span class="number">0</span>))</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Given the array nums, for each nums[i] find out how many 
+      
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>【LeetCode】1431. Kids With the Greatest Number of Candies</title>
